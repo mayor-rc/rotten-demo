@@ -1,0 +1,9 @@
+name: check
+on: pull_request
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sleep 45
+      - run: "! grep -q fail README.md"
